@@ -20,6 +20,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Select Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Verify public payload
         run: node verify-deployment.mjs
 

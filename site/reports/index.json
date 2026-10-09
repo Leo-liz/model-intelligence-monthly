@@ -1,8 +1,21 @@
 {
   "schema_version": 1,
-  "latest_month": "2026-09",
-  "generated_at": "2026-09-01T10:45:04+08:00",
+  "latest_month": "2026-10",
+  "generated_at": "2026-10-09T21:24:27+08:00",
   "reports": [
+    {
+      "month": "2026-10",
+      "status": "success",
+      "window_start": "2026-09-10",
+      "window_end": "2026-10-09",
+      "url": "reports/2026-10/",
+      "data_url": "reports/2026-10/monthly-report.json",
+      "generated_at": "2026-10-09T21:24:27+08:00",
+      "version": "2026-10",
+      "active_version": "candidate-cd08450564f1",
+      "version_history_url": "reports/2026-10/versions/index.json",
+      "previous_report_url": "reports/2026-09/"
+    },
     {
       "month": "2026-09",
       "status": "success",
