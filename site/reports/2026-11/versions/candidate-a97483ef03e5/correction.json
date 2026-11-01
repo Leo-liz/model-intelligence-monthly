@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "month": "2026-11",
+  "version_id": "candidate-a97483ef03e5",
+  "status": "archived_before_correction",
+  "url": "reports/2026-11/versions/candidate-a97483ef03e5/",
+  "data_url": "reports/2026-11/versions/candidate-a97483ef03e5/monthly-report.json",
+  "source_cutoff_at": "2026-11-01T09:00:00+08:00",
+  "archived_at": null,
+  "archived_at_evidence": {
+    "status": "unknown_historical_event",
+    "not_before": "2026-11-01T09:22:09+08:00",
+    "not_after": "2026-11-01T09:33:55+08:00"
+  },
+  "archived_version": "candidate-a97483ef03e5",
+  "replaced_by_version": "candidate-ef735e87ef30",
+  "archived_data_url": "reports/2026-11/versions/candidate-a97483ef03e5/monthly-report.json",
+  "replaced_by_data_url": "reports/2026-11/versions/candidate-ef735e87ef30/monthly-report.json",
+  "archived_json_sha256_raw": "1bcf74e7fe770ba2fc25b9513bac995dee2e01dcfc27c429e6c44a2483ddc302",
+  "replaced_by_content_sha256_canonical": "ef735e87ef3083b8792ab86223badb9a1f007516f7bcf4813ceddb706d9f8edd",
+  "correction_scope": "unknown_historical_content_change",
+  "reason": "月度候选内容发生变化，旧候选按不可变策略归档；现有证据不足以确定具体差异原因和真实归档时刻。"
+}

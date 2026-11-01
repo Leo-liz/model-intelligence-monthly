@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "month": "2026-11",
+  "version_id": "candidate-ef735e87ef30",
+  "status": "archived_before_correction",
+  "url": "reports/2026-11/versions/candidate-ef735e87ef30/",
+  "data_url": "reports/2026-11/versions/candidate-ef735e87ef30/monthly-report.json",
+  "source_cutoff_at": "2026-11-01T09:00:00+08:00",
+  "archived_at": null,
+  "archived_at_evidence": {
+    "status": "unknown_historical_event",
+    "not_before": "2026-11-01T09:22:09+08:00",
+    "not_after": "2026-11-01T09:33:55+08:00"
+  },
+  "archived_version": "candidate-ef735e87ef30",
+  "replaced_by_version": "candidate-5173e03fcc1b",
+  "archived_data_url": "reports/2026-11/versions/candidate-ef735e87ef30/monthly-report.json",
+  "replaced_by_data_url": "reports/2026-11/monthly-report.json",
+  "archived_json_sha256_raw": "840d3c3f24e938510d4ac8c2c58d987f360aa9d873bf0ffe11e5eed384070828",
+  "replaced_by_content_sha256_canonical": "5173e03fcc1b2573ed38119ab0063759e4d74ca92521f5ca285ea876ff6ba909",
+  "correction_scope": "unknown_historical_content_change",
+  "reason": "月度候选内容发生变化，旧候选按不可变策略归档；现有证据不足以确定具体差异原因和真实归档时刻。"
+}
