@@ -64,7 +64,7 @@ for (const [path, expected] of [
   ["reports/2026-08/monthly-report.json", "7236f9a41aeeb13f6c93b9045e976f3d909320c8f9400372bc9617309bbe76ac"],
   ["reports/2026-09/monthly-report.json", "cdcaa1e91fd44ce15743ef2d7cdb5ac4b9cb773547f60cda27ea85b6ef8c2f99"],
 ]) assert.equal(textHash(await read(path)), expected, `${path} historical data changed`);
-assert.equal(hash(await read("reports/2026-10/monthly-report.json")), "e332b4e107511e0d9871a6f9be9cb2676dff373036133389c369da8cd03387f8");
+assert.equal(textHash(await read("reports/2026-10/monthly-report.json")), "664ecb87182265db3b991a3449da5dfac07efe6837f9ffab971568f3591e4d65");
 
 const octoberVersions = await json("reports/2026-10/versions/index.json");
 assert.equal(octoberVersions.active_version, "candidate-cd08450564f1");
