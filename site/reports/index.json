@@ -1,7 +1,18 @@
 {
   "schema_version": 1,
   "latest_month": "2026-11",
+  "latest_sample": "2026-11-17",
   "generated_at": "2026-11-01T09:00:00+08:00",
+  "samples": [
+    {
+      "id": "2026-11-17",
+      "status": "success",
+      "sample_start": "2026-11-12T15:00:00+08:00",
+      "sample_end": "2026-11-12T18:00:00+08:00",
+      "url": "reports/samples/2026-11-17/",
+      "data_url": "reports/samples/2026-11-17/report.json"
+    }
+  ],
   "reports": [
     {
       "month": "2026-11",
