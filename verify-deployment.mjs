@@ -122,6 +122,12 @@ const expectedFiles = new Set([
   "reports/2026-11/versions/index.json",
   ...Object.keys(expectedNovemberArchives).flatMap((version) => ["index.html", "monthly-report.json", "correction.json"].map((name) => `reports/2026-11/versions/${version}/${name}`)),
 ]);
+const stageHashes = {"reports/2026-11-01--19/assets/index-BxLBKrON.css":"f582d62b07552f2487fb65c14b36ae7bd31a1730436748922e2cf9abaae59ed5","reports/2026-11-01--19/assets/index-DOWTl08h.js":"0f0d6d2207bbde2ab3f052400fbad838076442508918d8911e5ba3569d2d210c","reports/2026-11-01--19/data/ledger.json":"de84218711eefdefd390d7d1daa18637db6e94930ac5ddd9837bf9985f7ea013","reports/2026-11-01--19/data/report.json":"906b4e4b7b04db7dae7759ed6936c489d04a224a7635fe6c11b73586ad656174","reports/2026-11-01--19/index.html":"f3b26be7eece04bf56995088d9ea08443dec057394d4d2822560c8e9e83af334"};
+for (const [path, expected] of Object.entries(stageHashes)) {
+  assert.ok(!expectedFiles.has(path), "阶段报告不得覆盖旧文件");
+  expectedFiles.add(path);
+  assert.equal(hash(await read(path)), expected, `${path} stage file hash mismatch`);
+}
 const files = await filesUnder(site);
 assert.deepEqual(files, [...expectedFiles].sort());
 for (const path of files) assert.ok((await stat(resolve(site, path))).isFile());
@@ -135,7 +141,12 @@ for (const path of files.filter((name) => name.endsWith(".html"))) {
   assert.match(html, /<title>月度换模雷达｜模型情报月报<\/title>/);
   assert.match(html, /https:\/\/leo-liz\.github\.io\/model-intelligence-monthly\/model-intelligence-preview\.png/);
   assert.doesNotMatch(html, /产品总监|favicon\.svg/);
-  for (const asset of assets) assert.match(html, new RegExp(asset.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  const expectedHtmlAssets = path === "reports/2026-11-01--19/index.html" ? ["reports/2026-11-01--19/assets/index-BxLBKrON.css","reports/2026-11-01--19/assets/index-DOWTl08h.js"] : assets;
+  if (path === "reports/2026-11-01--19/index.html") {
+    const stageAssets = [...html.matchAll(/(?:src|href)="\/model-intelligence-monthly\/(reports\/[^"]+\.(?:js|css))"/g)].map((entry) => entry[1]);
+    assert.deepEqual(stageAssets.sort(), [...expectedHtmlAssets].sort());
+  }
+  for (const asset of expectedHtmlAssets) assert.match(html, new RegExp(asset.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
 }
 
 assert.deepEqual((await readdir(root)).filter((name) => name !== ".git").sort(), [".github", "README.md", "site", "verify-deployment.mjs"]);
